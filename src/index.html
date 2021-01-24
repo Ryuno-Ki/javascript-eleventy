@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Eleventy is a simpler static site generator.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./reveal.css" />
+    <link rel="stylesheet" href="./reveal/theme/black.css" />
+    <style>
+      .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      .reveal .license {
+        margin-bottom: 0;
+        margin-block-end: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 class="r-fit-text">
+            Eleventy is a simpler static site generator.
+          </h1>
+          <p>FOSDEM 2021</p>
+          <p><small>by André Jaenisch on 6th February 2021</small></p>
+          <p><img src="/qr-code.png" alt="" /></p>
+          <p>
+            <a href="https://jaenis.ch/hobbies/speaking/fosdem2021-javascript-eleventy/">
+              jaenis.ch/hobbies/speaking/fosdem2021-javascript-eleventy/
+            </a>
+          </p>
+          <p
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:dct="http://purl.org/dc/terms/"
+            >
+            <span class="visually-hidden">
+              <a
+                property="dct:title"
+                rel="cc:attributionURL"
+                href="https://jaenis.ch/hobbies/speaking/fosdem2021-javascript-eleventy/"
+                >
+                Eleventy is a simpler static site generator.
+              </a> by
+              <a
+                rel="cc:attributionURL dct:creator"
+                property="cc:attributionName"
+                href="https://fosdem.org/2021/schedule/speaker/andre_jaenisch/"
+                >
+                André Jaenisch
+              </a> is licensed under
+            </span>
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+              target="_blank"
+              rel="license noopener noreferrer"
+              style="display:inline-block;"
+              >
+              <img
+                src="cc-by.png"
+                alt="Creative Commons Attribution 4.0 International"
+                class="license"
+                />
+              Attribution 4.0 International
+            </a>
+          </p>
+          <aside class="notes">
+            <p>
+              Welcome. This is my first time I'm talking at FOSDEM.
+              You can follow along with the slides via the link.
+            </p>
+            <p>
+              By the time this airs, I hope to be able to provide subtitles
+              for download. The content will be close to speaker notes you can
+              find behind the link.
+            </p>
+            <p>
+              My name is André Jaenisch.
+              I'm currently working as Software engineer at Jambit.
+              It's a medium-sized software provider from Germany.
+              This talk has no relationship with my work.
+              Instead, it's a topic I'm highly interested in.
+            </p>
+            <p>
+              Since this reveal.js presentation is pre-recorded using OBS Studio,
+              please ask your questions at the end.
+              I would welcome if you would allow me to add your comments to
+              the presentation slides afterwards. Please tell me if you want to
+              opt-in.
+            </p>
+            <p>
+              Unless otherwise noted, the content is made available under the
+              Creative Commons Attribution 4.0 International license.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <h2>
+            <img src="11ty.svg" alt="Eleventy" style="max-height: 70vmin" />
+          </h2>
+          <aside class="notes">
+            <p>Today I want to tell you something about Eleventy.</p>
+            <p>Eleventy is a simpler Static Site Generator.</p>
+            <p>
+              You will learn something about the people behind it,
+              why it was build,
+              where you can read more about it,
+              what the community did with it,
+              where you can ask questions or
+              how you can help.
+            </p>
+            <p>Along the way we will see some possums.</p>
+            <p>Eleventy's mascot is one. His name is Edison.</p>
+            <p>The idea spun from James Williamson, who sadly passed away ⚱️</p>
+          </aside>
+        </section>
+        <section>
+          <h2>What does Eleventy mean?</h2>
+          <img
+            src="lotr.jpeg"
+            alt="When Mr. Biblo Baggings celebrated his eleventy-first birthday with a party of special magnificience, it was the talk of the Shire."
+            class="fragment"
+            />
+          <aside class="notes">
+            <p>As preparation for this talk, I did some research.</p>
+            <p>
+              Although I couldn't find the trivia behind its name,
+              there are some interesting tidbits associated with the term.
+            </p>
+            <p>
+              The term „Eleventy” came up in
+              <a href="https://en.wiktionary.org/wiki/eleventy">
+                Old English
+              </a>,
+              <a href="https://www.lexico.com/definition/eleventy">
+                mid 19th century
+              </a>.
+              It became more popular with The Lord of the Rings by
+              J. R. R. Tolkien.
+            </p>
+            <p>This image here is taken from a video game.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="zach.png" alt="Zach Leatherman" />
+          <aside class="notes">
+            <p>Meet Zach.</p>
+            <p>He's the person, who created Eleventy.</p>
+            <p>Next to static site generators he's deep into Web Fonts.</p>
+            <p>You might also know him from conferences.</p>
+          </aside>
+        </section>
+        <section>
+          <p>
+            <a href="https://www.11ty.dev/news/logo-homage/">Why a possum?</a>
+          </p>
+          <img src="opossum.jpg" alt="Baby opossum" class="fragment" />
+          <aside class="notes">
+            <p>I did some research, actually.</p>
+            <p>Here, we can see a baby opposum.</a>
+            <p>
+              But there are other mammals called possum which live in
+              Australia. I guess, it's American slang to call them the same.
+            </p>
+            <p>Now the more important question:</p>
+            <p>Why does Eleventy use an opossum as mascot?</p>
+            <p>The answer is: 42.</p>
+            <p>The real answer is a homage to Zach's friend.</p>
+          </aside>
+        </section>
+        <section data-background-image="opossum2.jpg" data-background-opacity="0.1">
+          <h2>What is a Static Site Generator?</h2>
+          <blockquote class="fragment">
+            Think of a static site generator as a script which takes in data,
+            content and templates, processes them, and outputs a folder full of
+            all the resultant pages and assets.
+          </blockquote>
+          <p class="fragment">
+            &mdash; <cite>
+              <a href="https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/">
+                Phil Hawksworth at Netlify
+              </a>
+            </cite>
+          </p>
+          <aside class="notes">
+            <p>
+              Before we continue, it's worth to define what we mean by
+              Static Site Generator. Here's a definition by Phil Hawksworth
+              who works also at Netlify like Zach.
+            </p>
+            <p>We will meet data, content and templates later again.</p>
+          </aside>
+        </section>
+        <section>
+          <section data-background-image="opossum3.jpg" data-background-opacity="0.3">
+            <h2>What makes Eleventy special?</h2>
+            <p class="fragment">Flexibility</p>
+            <p class="fragment">Betting on JavaScript</p>
+            <p class="fragment">Not a JavaScript framework</p>
+            <p class="fragment">
+              <a href="https://www.zachleat.com/web/introducing-eleventy/">
+                Introduction blog post
+              </a>
+            </p>
+            <aside class="notes">
+              <p>
+                There are a lot of Static Site Generators out there.
+                They come in different shapes and
+                flavours.
+                Personally I used Jekyll, Hugo, Hexo and Grav before.
+              </p>
+              <p>
+                But Eleventy has something, that makes it stand out to me.
+              </p>
+              <p>
+                From its initial design goals, these are:
+                Flexibility, Betting on JavaScript, not a JavaScript framework.
+                You can find Zach's thoughts on his introduction blog post.
+                Let's look at them in detail.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Flexibility</h3>
+            <p>Mix and match template engines.</p>
+            <p>Define input and output.</p>
+            <p>Or use it as one-off script.</p>
+            <aside class="notes">
+              <p>Flexibility</p>
+              <p>
+                You can mix and match template engines at will.
+                Say, having Liquid because you started off with Jekyll.
+                At one point, you want to benefit from Nunjucks. Easy with
+                Eleventy!
+              </p>
+              <p>
+                Eleventy even allows you to define a template inheritance chain
+                - between different template languages if you feel like it!
+              </p>
+              <p>
+                You are also free to choose input and output directory.
+                Or even use it to transform a single file!
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Betting on JavaScript</h3>
+            <img
+              src="modulecount.png"
+              alt="Chart showing NPM modules outrunning different others"
+              />
+            <p>
+              Source: 
+              <a href="http://www.modulecounts.com/">Modulecounts</a>
+            </p>
+            <aside class="notes">
+              <p>Betting on JavaScript</p>
+              <p>
+                The JavaScript ecosystem is vast!
+                I ran modulecounts against different module repositories.
+                NPM clocks at 1.5 million in Jan 2021.
+                That's a 1.5 and five zeroes! Followed by Maven with about
+                370k Java modules. That's four times as much choice!
+              </p>
+              <p>
+                You will likely find a library for every problem you can think
+                of. Let's benefit from this fact.
+              </p>
+              <p>
+                I hear your argument: That would be true for other Static Site
+                Generators like Gatsby, too. Which leads us to …
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Not a JavaScript framework</h3>
+            <aside class="notes">
+              <p>Not a JavaScript framework</p>
+              <p>
+                Unlike Gatsby, Eleventy does not force you to learn a JavaScript
+                framework. It's plain Node.js. It does not recommend or enforce
+                certain frameworks (by default). That being said, there are
+                experiments to use it with Svelte or Vue.js.
+              </p>
+              <p>
+                It neither forces you to use a certain template language.
+                More about that later.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-background-image="opossum4.jpg" data-background-opacity="0.4">
+            <h2>Where is it used?</h2>
+            <div class="r-stack">
+              <img class="fragment" src="chrome-dev-summit-600-js.webp" alt="Chrome Dev Summit" />
+              <img class="fragment" src="css-tricks-conferences-600-js.webp" alt="CSS Tricks Conference" />
+              <img class="fragment" src="eslint-600-js.webp" alt="ESLint website" />
+            </div>
+            <p class="fragment">
+              <a href="https://www.11ty.dev/speedlify/">Leaderboard</a>
+            </p>
+            <aside class="notes">
+              <p>Okay, that's all good and fine. But is it actually used?</p>
+              <p>I brought you some examples.</p>
+              <p>Take the Chrome Dev Summit was built with Eleventy.</p>
+              <p>Or the CSS Tricks conference page.</p>
+              <p>Or take the ESLint website.</p>
+              <p>
+                If you want to browse them yourself, head over to the
+                Leaderboard with over 450 entries.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h2>What do people say about it?</h2>
+            <div class="r-stack">
+              <div class="fragment fade-in-then-out">
+                <blockquote>
+                  Eleventy is almost fascinatingly simple.
+                </blockquote>
+                <p>&ndash; <cite>Chris Coyier</cite></p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <blockquote>
+                  Eleventy is a killer static site generator. That’s all.
+                </blockquote>
+                <p>&ndash; <cite>Sara Soueidan</cite></p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <blockquote>
+                  Jekyll is dead to me
+                </blockquote>
+                <p>&ndash; <cite>Andy Bell</cite></p>
+              </div>
+            </div>
+            <aside class="notes">
+              <p>Okay, perhaps you are more interested in individuals. Fine.</p>
+              <p>
+                Chris Coyier from CSS-Tricks says
+                „Eleventy is almost fascinatingly simple.”
+              </p>
+              <p>
+                Or take Sara Soueidan, a freelance designer:
+                „Eleventy is a killer static site generator. That’s all.”
+              </p>
+              <p>
+                Later on, we will hear more from Andy Bell:
+                „Jekyll is dead to me”
+              </p>
+            </aside>
+          </section>
+          <section>
+            <p>
+              <img src="eleventy-supporters.png" alt="Eleventy supporters" />
+            </p>
+            <p>
+              <a href="https://opencollective.com/11ty">
+                Join 250+ supporters on Open Collective
+              </a>
+            </p>
+            <aside class="notes">
+              <p>
+                With that strong enthusiasm, there are a lot of people who
+                support Eleventy financially.
+              </p>
+              <p>
+                You can even see some organisations. According to
+                Open Collective there are more like ESLint or Frontend Weekly,
+                but they did not make it to Gold sponsorship and thus don't
+                appear on the screenshot.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-background-image="opossum5.jpg" data-background-opacity="0.3">
+            <h2>What can you build with it?</h2>
+            <p class="fragment">Blogs</p>
+            <p class="fragment">Conference pages</p>
+            <p class="fragment">Conference events</p>
+            <aside class="notes">
+              <p>Recall the definition of a Static Site Generator?</p>
+              <p>They produce <em>pages</em> and assets.</p>
+              <p>
+                So you can basically build everything that consists of pages.
+              </p>
+              <p>The default idea is a blog. Or perhaps a website.</p>
+              <p>But if you level up to JAMstack, you can take it further.</p>
+              <p>JAMstack stands for JavaScript, APIs and Markup.</p>
+              <p>I showed you conference pages before.</p>
+            </aside>
+          </section>
+          <section>
+            <div class="r-stack">
+              <div class="fragment">
+                <img src="healthcare.png" alt="Screenshot of Lightning Talk" />
+                <p>
+                  <a href="https://www.youtube.com/watch?v=RvNV8Lesmrc">
+                    Leveraging 11ty in Healthcare by Dr. Dan Fascia [Jamstack Toronto]
+                  </a>
+                </p>
+              </div>
+              <div class="fragment">
+                <img src="special-interest.png" alt="Screenshot of Lightning Talk" />
+                <p>
+                  <a href="https://www.youtube.com/watch?v=RvNV8Lesmrc">
+                    Leveraging 11ty in Healthcare by Dr. Dan Fascia [Jamstack Toronto]
+                  </a>
+                </p>
+              </div>
+              <div class="fragment">
+                <img src="radiology-masters.png" alt="Screenshot of Lightning Talk" />
+                <p>
+                  <a href="https://www.youtube.com/watch?v=RvNV8Lesmrc">
+                    Leveraging 11ty in Healthcare by Dr. Dan Fascia [Jamstack Toronto]
+                  </a>
+                </p>
+              </div>
+            </div>
+            <aside class="notes">
+              <p>
+                Now, what blew my mind was this Lightning Talk by
+                Doctor Dan Fascia, who granted me permission to share some
+                screenshots from YouTube with you.
+                He works as Radiologist and Health Technologist.
+                So not exactly what most of us do here for a living.
+              </p>
+              <p>
+                The first two are websites, where he could repurpose some
+                Nunjucks components, that were already written.
+                But the last one is a <strong>whole conference</strong>
+                build with Eleventy and some APIs. Go, watch the video.
+                After my talk, of course :)
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-background-image="opossum6.jpg" data-background-opacity="0.3">
+            <h2>Why is it so popular?</h2>
+            <div class="r-stack">
+              <div class="fragment fade-in-then-out">
+                <img src="documentation.png" alt="Documentation button" />
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Easy to get started!</p>
+                <pre><code>npx eleventy</code></pre>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Full power of NPM ecosystem</p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Plugins (filter, shortcodes, transforms)</p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Authoring in Markdown (mainly)</p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Support for different template languages</p>
+                <p>
+                  HTML, Markdown, JavaScript, Liquid, Nunjucks, Handlebars,
+                  Mustache, EJS, Haml, Pug
+                </p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Collections</p>
+                <p>
+                  There is a default collection built from <code>tags</code>.
+                  But you also have different ways to define your own.
+                </p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Data Directory files!</p>
+                <p>You can pull in async data using this feature</p>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <p>Pagination</p>
+                <p>Can be used to create pages from data</p>
+              </div>
+            </div>
+            <aside class="notes">
+              <p>Let's shortly recap, what makes Eleventy special.</p>
+              <p>It's easy to get started. You have the NPM behind you.</p>
+              <p>
+                Plugins fall into three categories. Filters take some content
+                and transform it into something else to be used in-place.
+                Shortcodes can be thought of as macros. So a placeholder for
+                a larger code snippet.
+                Transforms operate on a whole file.
+              </p>
+              <p>
+                You can write your content in Markdown. Or plain HTML.
+                (One of the pillars of Static Site Generators!)
+              </p>
+              <p>
+                Next to the default collection generated from <code>tags</code>
+                you can use a file glob. Or filter an existing collection.
+              </p>
+              <p>
+                The async data used for directory files can be on disk.
+                I'm curating an events list for example.
+                Or you can fetch it over the wire. I'm pulling my tweets onto
+                my website this way.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-background-image="opossum7.jpg" data-background-opacity="0.3">
+            <h2>Community activity</h2>
+            <aside class="notes">
+              <p>
+                Before we go into technical details, I want to show you how
+                the community might help you along the journey.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Exchange of ideas</h3>
+            <p>
+              on
+              <a href="https://twitter.com/eleven_ty/">
+                Twitter
+              </a> or
+              <a href="https://github.com/11ty/eleventy/discussions">
+                GitHub
+              </a> or
+              <a href="https://discord.gg/GBkBy9u">
+                Discord
+              </a>
+            </p>
+            <aside class="notes">
+              <p>
+                There are different places the community is coming together.
+                Originally, there was interaction via Twitter.
+                Then, GitHub introduced Discussions and we use them next to
+                plain old issues. If you have more shortlived questions, hop
+                into the latest addition: a Discord server.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Voting for issues</h3>
+            <p>Voting for issues to determine implementation order</p>
+            <p>
+              <a href="https://twitter.com/samselikoff/status/991395669016436736">
+                Lodash-style issue management might be a cure
+              </a>
+            </p>
+            <p>Basically close most issues and use a GitHub issue filter.</p>
+            <aside class="notes">
+              <p>Burnout is a serious issue in tech.</p>
+              <p>
+                I was surprised when it was introduced, but it makes kind of
+                sense. If you maintain an Open Source library, you might want
+                to adopt it.
+              </p>
+              <p>You could also consider this a failure on GitHub's end.</p>
+            </aside>
+          </section>
+          <section>
+            <h3>Blogging</h3>
+            <p>
+              <a href="https://24ways.org/2018/turn-jekyll-up-to-eleventy/">
+                Turn Jekyll up to Eleventy
+              </a>
+              by Paul Lloyd
+            </p>
+            <p>
+              <a href="https://css-tricks.com/cloudinary-fetch-with-eleventy-respecting-local-development/">
+                 Cloudinary Fetch with Eleventy (Respecting Local Development)
+              </a>
+              by Chris Coyier
+            </p>
+            <p>
+              <a href="https://css-tricks.com/give-your-eleventy-site-superpowers-with-environment-variables/">
+                 Give your Eleventy Site Superpowers with Environment Variables 
+              </a>
+              by Andy Bell
+            </p>
+            <p>
+              <a href="https://sia.codes/posts/architecting-data-in-eleventy/">
+                Architecting data in Eleventy
+              </a>
+              by Sia Karamalegos
+            </p>
+            <p>
+              <a href="https://www.jefago.com/technology/rich-link-previews-in-eleventy-and-nunjucks/">
+                Rich Link Previews in Eleventy
+              </a>
+              by Jens-Fabian Goetzmann
+            </p>
+            <aside class="notes">
+              <p>
+                You will find plenty of starter blog posts with a quick search.
+              </p>
+              <p>
+                Thus, I picked some more advanced topics written by different
+                authors. They might blend into the JAMstack again.
+              </p>
+              <p>
+                But again, you will find data, content and template topics,
+                which make up a Static Site Generator.
+              </p>
+              <p>
+                If you are missing something, come and talk with us!
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Developing plugins</h3>
+            <img
+      src="eleventy-plugins.png"
+      alt="Random collection of user provided plugins"
+      />
+            <aside class="notes">
+              <p>
+                This looks like much, but it's only a small subset of what
+                the community has developed.
+              </p>
+              <p>
+                There is no rule, but per convention, most plugins start with
+                <code>eleventy-plugin-</code>.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Providing starter repos</h3>
+            <img src="eleventy-starters.png" alt="Random collection of Eleventy starters" />
+            <aside class="notes">
+              <p>
+                If you don't feel like building everything from scratch, you
+                can clone one of the starter repos on GitHub and start from
+                there.
+              </p>
+              <p>
+                As you can see, they get great scores on Lighthouse, so you
+                will have a great foundation.
+              </p>
+              <p>Again, the starters shown here are only a small subset.</p>
+            </aside>
+          </section>
+          <section>
+            <h3>Curating examples</h3>
+            <p class="fragment">
+              <a href="https://11ty.rocks/">
+                11ty Rocks!
+              </a>
+            </p>
+            <p class="fragment">
+              <a href="https://www.11ty.recipes/">
+                11ty Recipes
+              </a>
+            </p>
+            <p class="fragment">
+              <a href="https://jamstackthemes.dev/ssg/eleventy/">
+                Eleventy Themes
+              </a>
+            </p>
+            <p class="fragment">
+              <a href="https://builtwitheleventy.com/">
+                #BuiltWithEleventy
+              </a>
+            </p>
+            <aside class="notes">
+              <p>Say, I convinced you to get started with Eleventy.</p>
+              <p>
+                If you want to use a guideline to follow along, use 11ty Rocks!
+              </p>
+              <p>
+                Another project in that spirit can be found at 11ty Recipes.
+              </p>
+              <p>
+                If you need inspiration, take a look at Eleventy Themes.
+                Be aware, that Eleventy does not have a theming system itself.
+              </p>
+              <p>
+                Last but not least, hashtag BuiltWithEleventy collects pages
+                built with Eleventy and associates the group behind it.
+                You can even find large enterprises betting on it!
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Talks</h3>
+            <p>
+              <a href="https://www.smashingmagazine.com/2020/11/smashing-podcast-episode-28/">
+                Smashing Podcast Episode 28 With David Darnes: What Is Eleventy?
+              </a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/playlist?list=PLc_KoiGi3sLfxAQhIx87GY7PnoVALDNn0">
+                JAMStack Toronto
+              </a>
+            </p>
+            <aside class="notes">
+              <p>
+                I'm not the first to introduce a wider audience to Eleventy.
+              </p>
+              <p>
+                In fact, I can recommend these two links. A podcast and a
+                YouTube playlist. David will give you a nice overview like I
+                did here. The playlist shows some real-world examples or can
+                teach you more tricks.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Training course</h3>
+            <p class="fragment">
+              <a href="https://piccalil.li/course/learn-eleventy-from-scratch">
+                Learn Eleventy From Scratch
+              </a>
+            </p>
+            <p class="fragment">
+              <a href="https://egghead.io/playlists/build-an-eleventy-11ty-site-from-scratch-bfd3">
+                Build An Eleventy (11ty) Site From Scratch
+              </a>
+            </p>
+            <p class="fragment">
+              <a href="https://www.learnwithjason.dev/lets-learn-eleventy">
+                Let’s Learn Eleventy! (with Zach Leatherman) — Learn With Jason
+              </a>
+            </p>
+            <aside class="notes">
+              <p>
+                Eleventy got enough traction, that the first training courses
+                came up.
+              </p>
+              <p>
+                Perhaps, you feel better with spending some money to get
+                high-quality stuff in return. Andy Bell has you covered.
+                I haven't taken his course personally, but I only hear positive
+                feedback about it.
+              </p>
+              <p>
+                If you want something sweat and short, Stephanie Eckles has
+                something in stock.
+              </p>
+              <p>
+                Not convinced? What about learning with Jason then? He recorded
+                a video where Zach himself shows you the ropes.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Donating</h3>
+            <div>
+              <img src="contribute.png" alt="Contribute" />
+              <p>
+                <a href="https://opencollective.com/11ty">
+                  Eleventy on Open Collective
+                </a>
+              </p>
+            </div>
+            <aside class="notes">
+              <p>If this presentation convinced you, I urge you to donate.</p>
+              <p>This will help sustain the development.</p>
+              <p>There are even some perks associated with it.</p>
+              <p>For example, the search will become more powerful.</p>
+              <p>Or you get listed with your avatar on almost all pages.</p>
+              <p>So this is your chance!</p>
+              <p>
+                If you don't have the money, please star the repo and tell a
+                friend how amazing it is!
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Picture credits</h2>
+            <p>Screenshot of Eleventy logo - MIT licensed</p>
+            <p>Avatar of Zach Leatherman - MIT licensed</p>
+            <p>
+              Picture of Bilbo's birthday party taken from
+              <a href="https://www.uvlist.net/game-153159-J.R.R.+Tolkiens+The+Lord+of+the+Rings+Vol.I">
+                J.R.R. Tolkien's The Lord of the Rings Vol. I
+              </a>
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/qkwFJK">
+                short tailed opossum
+              </a> by <a href="https://www.flickr.com/photos/wcdumonts/">
+                Mark Dumont
+              </a> (<a href="https://creativecommons.org/licenses/by-nc/2.0/">
+                CC BY-NC
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/JWZRF">
+                possum
+              </a> by <a href="https://www.flickr.com/photos/kahootsveldty/">
+                Tires 8
+              </a> (<a href="https://creativecommons.org/licenses/by-nc/2.0/">
+                CC BY-NC
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/y8i8HL">
+                Opossum
+              </a> by <a href="https://www.flickr.com/photos/myfwcmedia/">
+                Florida Fish and Wildlife
+              </a> (<a href="https://creativecommons.org/licenses/by-nd/2.0/">
+                CC BY-ND
+              </a>)
+            </p>
+	  </section>
+	  <section>
+            <h2>Picture credits (continued)</h2>
+            <p>
+              Flickr: <a href="https://flic.kr/p/2eKp9Mw">
+                Opossum
+              </a> by <a href="https://www.flickr.com/photos/lorri37/">
+                Dandelion Salad
+              </a> (<a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">
+                CC BY-NC-ND
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/bCw4N">
+                opossum
+              </a> by <a href="https://www.flickr.com/photos/plushev/">
+                Alexander Plushev
+              </a> (<a href="https://creativecommons.org/licenses/by/2.0/">
+                CC BY
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/7VD8Na">
+                possum with babies crossing street - Lynchburg, Virginia
+              </a> by <a href="https://www.flickr.com/photos/retroweb/">
+                Kipp Teague
+              </a> (<a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">
+                CC BY-NC-ND
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/Kf722y">
+                knit opossum
+              </a> by <a href="https://www.flickr.com/photos/29278394@N00/">
+                normanack
+              </a> (<a href="https://creativecommons.org/licenses/by/2.0/">
+                CC BY
+              </a>)
+            </p>
+            <p>
+              Flickr: <a href="https://flic.kr/p/7SWJxi">
+                baby opossums
+              </a> by <a href="https://www.flickr.com/photos/44603071@N00/">
+                Kathy
+              </a> (<a href="https://creativecommons.org/licenses/by/2.0/">
+                CC BY
+              </a>)
+            </p>
+          </section>
+          <section data-background-image="opossum8.jpg" data-background-opacity="0.3">
+            <h2>Questions?</h2>
+            <p>Thanks for listening!</p>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="./reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        progress: false,
+        showNotes: true
+      });
+    </script>
+  </body>
+</html>
