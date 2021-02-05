@@ -1,0 +1,1282 @@
+﻿1
+00:00:01,400 --> 00:00:05,000
+Welcome. This is my first time I'm talking at FOSDEM.
+
+2
+00:00:05,000 --> 00:00:07,800
+Welcome. This is my first time I'm talking at FOSDEM.
+You can follow along the slides via the link.
+
+3
+00:00:07,800 --> 00:00:12,400
+You can follow along with the slides via the link.
+By the time this airs, I hope to be able to provide subtitles for download.
+
+4
+00:00:12,400 --> 00:00:17,400
+By the time this airs, I hope to be able to provide subtitles for download.
+The content will be close to speaker notes you can see on the right hand or on the bottom,
+
+5
+00:00:17,400 --> 00:00:21,400
+The content will be close to speaker notes you can see on the right hand or on the bottom,
+depending on the screen size of your machine.
+
+6
+00:00:21,400 --> 00:00:23,250
+depending on the screen size of your machine.
+My name is André Jaenisch.
+
+7
+00:00:23,250 --> 00:00:26,000
+My name is André Jaenisch.
+I'm working as a Software engineer at Jambit,
+
+8
+00:00:26,000 --> 00:00:29,800
+I'm working as a Software engineer at Jambit,
+which is a medium-sized software provider in Germany.
+
+9
+00:00:29,800 --> 00:00:32,600
+which is a medium-sized software provider in Germany.
+This talk has nothing to do with my company.
+
+10
+00:00:32,600 --> 00:00:37,600
+This talk has nothing to do with my company.
+Instead, it's something I'm really interested in myself.
+
+11
+00:00:37,600 --> 00:00:44,300
+Instead, it's something I'm really interested in myself.
+Since this reveal.js presentation is pre-recorded using OBS Studio,
+
+12
+00:00:44,300 --> 00:00:48,700
+Since this reveal.js presentation is pre-recorded using OBS Studio,
+I'm kindly asking you to ask your questions at the end.
+
+13
+00:00:48,700 --> 00:00:50,700
+I'm kindly asking you to ask your questions at the end.
+Also it would be really great
+
+14
+00:00:50,700 --> 00:00:56,280
+Also it would be really great
+if I would be allowed to add your comments to the presentation slides afterwards.
+
+15
+00:00:56,280 --> 00:01:00,000
+if I would be allowed to add your comments to the presentation slides afterwards.
+Please let me know, if you're willing to opt-in into that.
+
+16
+00:01:00,000 --> 00:01:09,900
+Please let me know, if you're willing to opt-in into that.
+Unless otherwise noted, the content is made available under
+the Creative Commons Attribution 4.0 International license.
+
+17
+00:01:09,900 --> 00:01:11,000
+Unless otherwise noted, the content is made available under
+the Creative Commons Attribution 4.0 International license.
+
+18
+00:01:11,000 --> 00:01:11,780
+the Creative Commons Attribution 4.0 International license.
+
+19
+00:01:11,780 --> 00:01:15,060
+Today I want to tell you something about Eleventy.
+
+20
+00:01:15,060 --> 00:01:18,590
+Today I want to tell you something about Eleventy.
+Eleventy is a simpler Static Site Generator.
+
+21
+00:01:18,590 --> 00:01:21,920
+Eleventy is a simpler Static Site Generator.
+You will learn something about the people behind it,
+
+22
+00:01:21,920 --> 00:01:23,640
+You will learn something about the people behind it,
+why it was build,
+
+23
+00:01:23,640 --> 00:01:25,880
+why it was build,
+where you can read more about it,
+
+24
+00:01:25,880 --> 00:01:28,080
+where you can read more about it,
+what the community did with it,
+
+25
+00:01:28,080 --> 00:01:31,500
+what the community did with it,
+where you can ask questions or how you can help.
+
+26
+00:01:31,500 --> 00:01:34,300
+where you can ask questions or how you can help.
+Along the way we will see some possums.
+
+27
+00:01:34,300 --> 00:01:37,500
+Along the way we will see some possums.
+Eleventy's mascot is one. His name is Edison.
+
+28
+00:01:37,500 --> 00:01:44,600
+Eleventy's mascot is one. His name is Edison.
+The idea spun from James Williamson, who sadly passed away.
+
+29
+00:01:44,600 --> 00:01:46,600
+The idea spun from James Williamson, who sadly passed away.
+What does Eleventy mean?
+
+30
+00:01:46,600 --> 00:01:50,000
+What does Eleventy mean?
+As preparation for this talk, I did some research.
+
+31
+00:01:50,000 --> 00:01:53,800
+As preparation for this talk, I did some research.
+Although I couldn't find the trivia behind its name,
+
+32
+00:01:53,800 --> 00:01:57,300
+Although I couldn't find the trivia behind its name,
+there are some interesting tidbits associated with it.
+
+33
+00:01:57,300 --> 00:02:03,160
+there are some interesting tidbits associated with it.
+The term „Eleventy” came up in Old English, around mid 19th century.
+
+34
+00:02:03,160 --> 00:02:07,920
+The term „Eleventy” came up in Old English, around mid 19th century.
+It became more popular with The Lord of the Rings by J. R. R. Tolkien.
+
+35
+00:02:07,920 --> 00:02:12,920
+It became more popular with The Lord of the Rings by J. R. R. Tolkien.
+This image here is taken from a video game.
+
+36
+00:02:13,000 --> 00:02:14,400
+This image here is taken from a video game.
+Meet Zach.
+
+37
+00:02:14,400 --> 00:02:16,900
+Meet Zach.
+He's the person, who created Eleventy.
+
+38
+00:02:16,900 --> 00:02:22,650
+He's the person, who created Eleventy.
+Next to static site generators he's also interested into Web Fonts.
+
+39
+00:02:22,650 --> 00:02:25,650
+Next to static site generators he's also interested into Web Fonts.
+You might also know him from conferences.
+
+40
+00:02:25,650 --> 00:02:28,160
+You might also know him from conferences.
+Now, the important questions.
+
+41
+00:02:28,160 --> 00:02:29,440
+Now, the important questions.
+Why a possum?
+
+42
+00:02:29,440 --> 00:02:31,600
+Why a possum?
+I did some research, actually.
+
+43
+00:02:31,600 --> 00:02:35,600
+I did some research, actually.
+Here, we see a baby opposum.
+
+44
+00:02:35,600 --> 00:02:40,900
+Here, we see a baby opposum.
+But there are other mammals called possums which live in Australia.
+
+45
+00:02:40,900 --> 00:02:44,680
+But there are other mammals called possums which live in Australia.
+I guess, it's American slang term to call them the same.
+
+46
+00:02:44,680 --> 00:02:46,800
+I guess, it's American slang term to call them the same.
+Now the more important question:
+
+47
+00:02:46,800 --> 00:02:49,600
+Now the more important question:
+Why does Eleventy use an opposum as a mascot?
+
+48
+00:02:49,600 --> 00:02:51,880
+Why does Eleventy use an opposum as a mascot?
+The answer is: 42.
+
+49
+00:02:51,880 --> 00:02:57,260
+The answer is: 42.
+The real answer is a homage to Zach's friend.
+
+50
+00:02:57,260 --> 00:02:58,460
+The real answer is a homage to Zach's friend.
+So now:
+
+51
+00:02:58,460 --> 00:03:02,960
+So now:
+Before we can continue, it is worth to define what we mean by Static Site Generator.
+
+52
+00:03:02,960 --> 00:03:09,660
+Before we can continue, it is worth to define what we mean by Static Site Generator.
+I brought you a definition by Phil Hawksworth who works also at Netlify like Zach.
+
+53
+00:03:09,660 --> 00:03:12,660
+I brought you a definition by Phil Hawksworth who works also at Netlify like Zach.
+Think of a Static Site Generator
+
+54
+00:03:12,660 --> 00:03:17,060
+Think of a Static Site Generator
+as a script which takes in data, content and templates
+
+55
+00:03:17,060 --> 00:03:22,960
+as a script which takes in data, content and templates
+processes them, and outputs a folder full of all the resultant pages and assets.
+
+56
+00:03:22,960 --> 00:03:29,960
+processes them, and outputs a folder full of all the resultant pages and assets.
+We will meet data, content and templates later again.
+
+57
+00:03:29,960 --> 00:03:33,560
+We will meet data, content and templates later again.
+What makes Eleventy special?
+
+58
+00:03:33,560 --> 00:03:36,280
+What makes Eleventy special?
+There are a lot of Static Site Generators out there.
+
+59
+00:03:36,380 --> 00:03:38,680
+There are a lot of Static Site Generators out there.
+They come in different shapes and forms.
+
+60
+00:03:38,680 --> 00:03:44,020
+They come in different shapes and forms.
+Personally, I used Jekyll, Hugo, Hexo and Grav before.
+
+61
+00:03:44,020 --> 00:03:47,720
+Personally, I used Jekyll, Hugo, Hexo and Grav before.
+But Eleventy has something, that makes it stand out to me.
+
+62
+00:03:47,720 --> 00:03:50,760
+But Eleventy has something, that makes it stand out to me.
+From its initial design goals, these are:
+
+63
+00:03:50,760 --> 00:03:52,860
+From its initial design goals, these are:
+Flexibility
+
+64
+00:03:52,860 --> 00:03:54,500
+Flexibility
+Betting on JavaScript
+
+65
+00:03:54,500 --> 00:03:59,420
+Betting on JavaScript
+and not being a JavaScript framework.
+
+66
+00:03:59,420 --> 00:04:02,900
+and not being a JavaScript framework.
+If you want to find more on Zach's thoughts on this
+
+67
+00:04:02,900 --> 00:04:06,640
+If you want to find more on Zach's thoughts on this
+check out his introduction blog post.
+
+68
+00:04:06,640 --> 00:04:09,160
+check out his introduction blog post.
+I want to look into them in detail now.
+
+69
+00:04:09,160 --> 00:04:11,220
+I want to look into them in detail now.
+Flexibility
+
+70
+00:04:11,220 --> 00:04:15,260
+Flexibility
+With Eleventy you can mix and match template engines at will.
+
+71
+00:04:15,260 --> 00:04:20,120
+With Eleventy you can mix and match template engines at will.
+Say, you have a Liquid template because you started off with Jekyll.
+
+72
+00:04:20,120 --> 00:04:24,440
+With Eleventy you can mix and match template engines at will.
+At one point, you want to benefit from some Nunjucks feature.
+
+73
+00:04:24,440 --> 00:04:27,080
+At one point, you want to benefit from some Nunjucks feature.
+It's easy with Eleventy!
+
+74
+00:04:27,080 --> 00:04:32,360
+It's easy with Eleventy!
+Eleventy even allows you to define a template inheritance chain
+
+75
+00:04:32,360 --> 00:04:35,420
+Eleventy even allows you to define a template inheritance chain
+- between different template languages if you want!
+
+76
+00:04:35,420 --> 00:04:39,000
+- between different template languages if you want!
+That means, you can start with a Liquid template, load that
+
+77
+00:04:39,000 --> 00:04:43,220
+That means, you can start with a Liquid template, load that
+with a Nunjucks template which gets loaded by an
+You are also free to choose input and output directory.
+
+78
+00:04:43,220 --> 00:04:45,720
+with a Nunjucks template which gets loaded by an
+Mustache template, for example.
+
+79
+00:04:45,720 --> 00:04:49,100
+mustache template, for example.
+You are also free to choose input and output directory.
+
+80
+00:04:49,100 --> 00:04:53,960
+You are also free to choose input and output directory.
+Or you even use Eleventy to transform a single file!
+
+81
+00:04:53,960 --> 00:04:55,600
+Or you even use Eleventy to transform a single file!
+
+82
+00:04:55,600 --> 00:04:59,600
+The JavaScript ecosystem is vast as you probably know!
+
+83
+00:04:59,600 --> 00:05:03,680
+The JavaScript ecosystem is vast as you probably know!
+I ran modulecounts against different module repositories.
+
+84
+00:05:03,680 --> 00:05:10,280
+I ran modulecounts against different module repositories.
+NPM clocks at about 1.5 million repositories
+
+85
+00:05:10,280 --> 00:05:13,340
+NPM clocks at about 1.5 million repositories
+in January 2021.
+
+86
+00:05:13,340 --> 00:05:17,040
+in January 2021.
+That's a 1.5 and five zeroes!
+
+87
+00:05:17,040 --> 00:05:26,220
+That's a 1.5 and five zeroes!
+The next largest repository is Maven for Java which contains about 370k modules.
+
+88
+00:05:26,220 --> 00:05:31,820
+The next largest repository is Maven for Java which contains about 370k modules.
+So Node.js has four times the amount of choices than Java!
+
+89
+00:05:31,820 --> 00:05:36,160
+So Node.js has four times the amount of choices than Java!
+That means, you will likely find a library for every problem you can think of.
+
+90
+00:05:36,160 --> 00:05:38,520
+That means, you will likely find a library for every problem you can think of.
+Let's benefit from this fact.
+
+91
+00:05:38,520 --> 00:05:40,700
+Let's benefit from this fact.
+I hear your argument:
+
+92
+00:05:40,700 --> 00:05:43,140
+I hear your argument:
+That would be true for other Static Site Generators.
+
+93
+00:05:43,140 --> 00:05:45,000
+That would be true for other Static Site Generators.
+Say Gatsby.
+
+94
+00:05:45,000 --> 00:05:47,000
+Say Gatsby.
+Which leds us to …
+
+95
+00:05:47,000 --> 00:05:49,420
+Which leds us to …
+Not being a JavaScript framework
+
+96
+00:05:49,420 --> 00:05:54,420
+Not being a JavaScript framework
+Unlike Gatsby, Eleventy does not force you to learn a JavaScript framework.
+
+97
+00:05:54,420 --> 00:05:56,720
+Unlike Gatsby, Eleventy does not force you to learn a JavaScript framework.
+It's plain Node.js.
+
+98
+00:05:56,720 --> 00:05:59,320
+It's plain Node.js.
+It does not recommend or enforce
+
+99
+00:05:59,320 --> 00:06:01,320
+It does not recommend or enforce
+certain frameworks (by default).
+
+100
+00:06:01,320 --> 00:06:07,500
+certain frameworks (by default).
+That being said, I'm aware of experiments to use it with Svelte or Vue.js.
+
+101
+00:06:07,500 --> 00:06:11,000
+That being said, I'm aware of experiments to use it with Svelte or Vue.js.
+It neither forces you to use a certain template language.
+
+102
+00:06:11,000 --> 00:06:13,000
+It neither forces you to use a certain template language.
+More about that later.
+
+103
+00:06:13,000 --> 00:06:16,280
+More about that later.
+Where is it used?
+
+104
+00:06:16,280 --> 00:06:19,300
+Where is it used?
+Okay, that's all good and fine. But is it actually used?
+
+105
+00:06:19,390 --> 00:06:21,600
+Okay, that's all good and fine. But is it actually used?
+I brought you some examples.
+
+106
+00:06:21,600 --> 00:06:23,440
+I brought you some examples.
+Take the Chrome Dev Summit.
+
+107
+00:06:23,440 --> 00:06:25,380
+Take the Chrome Dev Summit.
+Which was built with Eleventy.
+
+108
+00:06:25,380 --> 00:06:29,760
+Which was built with Eleventy.
+Or the CSS Tricks conference page.
+
+109
+00:06:29,760 --> 00:06:36,640
+Or the CSS Tricks conference page.
+Or if you want to take something different - what about the ESLint website.
+
+110
+00:06:36,640 --> 00:06:45,500
+Or if you want to take something different - what about the ESLint website.
+If you want to browse them yourself, head over to the Leaderboard which has over 450 entries.
+
+111
+00:06:45,500 --> 00:06:50,020
+If you want to browse them yourself, head over to the Leaderboard which has over 450 entries.
+Okay, perhaps you are more interested in individuals.
+
+112
+00:06:50,020 --> 00:06:51,360
+Okay, perhaps you are more interested in individuals.
+Fine.
+
+113
+00:06:51,360 --> 00:06:54,780
+Fine.
+Chris Coyier from CSS-Tricks says:
+
+114
+00:06:54,780 --> 00:06:58,280
+Chris Coyier from CSS-Tricks says:
+„Eleventy is almost fascinatingly simple.”
+
+115
+00:06:58,280 --> 00:07:02,160
+„Eleventy is almost fascinatingly simple.”
+Or take Sara Soueidan, a freelance designer:
+
+116
+00:07:02,160 --> 00:07:06,120
+Or take Sara Soueidan, a freelance designer:
+„Eleventy is a killer static site generator. That's all.”
+
+117
+00:07:06,120 --> 00:07:09,240
+„Eleventy is a killer static site generator. That's all.”
+We will hear more from Andy Bell later
+
+118
+00:07:09,240 --> 00:07:14,100
+We will hear more from Andy Bell later
+who said „Jekyll is dead to me”
+
+119
+00:07:14,100 --> 00:07:20,880
+who said „Jekyll is dead to me”
+With that strong enthusiasm, there are a lot of people who support Eleventy financially.
+
+120
+00:07:20,880 --> 00:07:25,700
+With that strong enthusiasm, there are a lot of people who support Eleventy financially.
+You can even see some organisations here, Sanity or Picalilli.
+
+121
+00:07:25,700 --> 00:07:33,700
+You can even see some organisations here, Sanity or Picalilli.
+According to Open Collective there are more like for example ESLint which we saw before or Frontend Weekly,
+
+122
+00:07:33,700 --> 00:07:39,640
+According to Open Collective there are more like for example ESLint which we saw before or Frontend Weekly,
+but they did not make it to Gold sponsorship and thus don't appear on the screenshot.
+
+123
+00:07:39,640 --> 00:07:45,580
+but they did not make it to Gold sponsorship and thus don't appear on the screenshot.
+What can you build with Eleventy?
+
+124
+00:07:45,580 --> 00:07:48,100
+What can you build with Eleventy?
+Recall the definition of a Static Site Generator?
+
+125
+00:07:48,100 --> 00:07:51,000
+Recall the definition of a Static Site Generator?
+They provide <i>pages</i> and assets.
+
+126
+00:07:51,000 --> 00:07:56,660
+They provide <i>pages</i> and assets.
+So you can basically build everything that consists of pages.
+
+127
+00:07:56,660 --> 00:07:59,180
+So you can basically build everything that consists of pages.
+Blogs is the default idea.
+
+128
+00:07:59,180 --> 00:08:01,640
+Blogs is the default idea.
+Or perhaps a website.
+
+129
+00:08:01,640 --> 00:08:04,640
+Or perhaps a website.
+But if you level up to JAMstack, you can take it further.
+
+130
+00:08:04,640 --> 00:08:09,640
+But if you level up to JAMstack, you can take it further.
+Remember: JAMstack stands for JavaScript, APIs and Markup.
+
+131
+00:08:09,640 --> 00:08:12,300
+Remember: JAMstack stands for JavaScript, APIs and Markup.
+For example, I showed you conference pages before,
+
+132
+00:08:12,300 --> 00:08:16,520
+For example, I showed you conference pages before,
+but you can build whole conferences.
+
+133
+00:08:16,520 --> 00:08:22,460
+but you can build whole conferences.
+Now, what blew my mind was this Lightning Talk by Doctor Dan Fascia,
+
+134
+00:08:22,460 --> 00:08:27,560
+Now, what blew my mind was this Lightning Talk by Doctor Dan Fascia,
+who granted me permission to use YouTube screenshots and share them with you.
+
+135
+00:08:27,560 --> 00:08:31,280
+who granted me permission to use YouTube screenshots and share them with you.
+He works as Radiologist and Health Technologist.
+
+136
+00:08:31,280 --> 00:08:34,780
+He works as Radiologist and Health Technologist.
+So not exactly what most of us do here for a living.
+
+137
+00:08:34,780 --> 00:08:38,660
+So not exactly what most of us do here for a living.
+The first two are websites,
+
+138
+00:08:38,660 --> 00:08:44,260
+The first two are websites,
+are websites where he could repurpose some Nunjucks components, which were already built.
+
+139
+00:08:44,260 --> 00:08:49,580
+are websites where he could repurpose some Nunjucks components, which were already built.
+But the last one is a <b>whole conference</b> built with Eleventy and some APIs.
+
+140
+00:08:49,580 --> 00:08:51,280
+But the last one is a <b>whole conference</b> built with Eleventy and some APIs.
+Go, watch the video.
+
+141
+00:08:51,280 --> 00:08:53,720
+Go, watch the video.
+After my talk, please.
+
+142
+00:08:53,720 --> 00:08:55,720
+After my talk, please.
+
+143
+00:08:58,820 --> 00:09:04,000
+So, let's shortly recap, what makes Eleventy so special.
+
+144
+00:09:06,000 --> 00:09:07,640
+It's easy to get started.
+
+145
+00:09:08,900 --> 00:09:11,640
+You have the full power of the NPM ecosystem.
+
+146
+00:09:12,800 --> 00:09:16,640
+You have plugins which fall into three categories.
+
+147
+00:09:16,640 --> 00:09:18,300
+You have plugins which fall into three categories.
+Filters
+
+148
+00:09:18,300 --> 00:09:25,680
+Filters
+which take some input or take some content and transform it into something else which is then used in-place.
+
+149
+00:09:25,680 --> 00:09:26,680
+which take some input or take some content and transform it into something else which is then used in-place.
+You have shortcodes
+
+150
+00:09:26,680 --> 00:09:28,940
+You have shortcodes
+which can be thought of as a macro.
+
+151
+00:09:28,940 --> 00:09:32,860
+which can be thought of as a macro.
+That means they are placeholder for a larger code snippet.
+
+152
+00:09:32,860 --> 00:09:34,640
+That means they are placeholder for a larger code snippet.
+And you have transforms
+
+153
+00:09:34,640 --> 00:09:36,580
+And you have transforms
+which operate on a whole file.
+
+154
+00:09:36,580 --> 00:09:38,580
+which operate on a whole file.
+
+155
+00:09:38,580 --> 00:09:42,240
+Then you can write your code or your content in Markdown.
+
+156
+00:09:42,240 --> 00:09:43,420
+Then you can write your code or your content in Markdown.
+Or HTML.
+
+157
+00:09:43,420 --> 00:09:47,380
+Or HTML.
+Remember that was another pillar of Static Site Generator!
+
+158
+00:09:47,380 --> 00:09:48,720
+Remember that was another pillar of Static Site Generator!
+
+159
+00:09:48,720 --> 00:09:51,320
+You have support for different template languages.
+
+160
+00:09:51,320 --> 00:09:52,860
+You have support for different template languages.
+By default Angular comes with
+
+161
+00:09:52,860 --> 00:09:57,280
+By default Angular comes with
+HTML, Markdown, JavaScript, Liquid, Nunjucks
+
+162
+00:09:57,280 --> 00:10:02,640
+HTML, Markdown, JavaScript, Liquid, Nunjucks,
+Handlebars, Mustache, Embedded JavaScript and Haml and Pug
+
+163
+00:10:02,640 --> 00:10:06,360
+Handlebars, Mustache, Embedded JavaScript and Haml and Pug
+Pug was formerly known as Jade.
+
+164
+00:10:06,360 --> 00:10:10,320
+Pug was formerly known as Jade.
+You have collections.
+
+165
+00:10:10,320 --> 00:10:16,600
+You have collections.
+Collections are generated by default from tags which you define in your frontmatter.
+
+166
+00:10:16,600 --> 00:10:19,460
+Collections are generated by default from tags which you define in your frontmatter.
+But you also have different other ways to define them,
+
+167
+00:10:19,460 --> 00:10:21,460
+But you also have different other ways to define them,
+for example you can take a collection
+
+168
+00:10:21,460 --> 00:10:24,180
+for example you can take a collection
+filter it and create a new collection from that.
+
+169
+00:10:24,180 --> 00:10:27,900
+filter it and create a new collection from that.
+Or you can use a file glob.
+
+170
+00:10:27,900 --> 00:10:30,640
+Or you can use a file glob.
+Then, you have async data
+
+171
+00:10:30,640 --> 00:10:33,640
+Then, you have async data
+which can be used in data directory files.
+
+172
+00:10:33,640 --> 00:10:38,240
+which can be used in data directory files.
+Personally I use it for example for a static file
+
+173
+00:10:38,240 --> 00:10:41,200
+Personally I use it for example for a static file
+where I maintain events I'm interested in
+
+174
+00:10:41,200 --> 00:10:43,280
+where I maintain events I'm interested in
+But you can also API for it.
+
+175
+00:10:43,280 --> 00:10:48,920
+But you can also API for it.
+For example I'm pulling my tweets onto my website using data directory files.
+
+176
+00:10:48,920 --> 00:10:52,100
+For example I'm pulling my tweets onto my website using data directory files.
+Last but not least: Pagination.
+
+177
+00:10:52,100 --> 00:10:56,000
+Last but not least: Pagination.
+Pagination can be used to create pages from data.
+
+178
+00:10:56,000 --> 00:10:59,420
+Pagination can be used to create pages from data
+by defining a page size of 1.
+
+179
+00:10:59,420 --> 00:11:02,620
+by defining a page size of 1.
+This way you can have an API or a headless CMS
+
+180
+00:11:02,620 --> 00:11:06,320
+This way you can have an API or a headless CMS
+and generate static sites from it.
+
+181
+00:11:06,320 --> 00:11:08,960
+and generate static sites from it.
+
+182
+00:11:08,960 --> 00:11:12,240
+Before we go into technical details,
+
+183
+00:11:12,240 --> 00:11:15,790
+Before we go into technical details,
+I want to show you how the community might help you along the journey.
+
+184
+00:11:15,790 --> 00:11:18,120
+I want to show you how the community might help you along the journey.
+
+185
+00:11:18,120 --> 00:11:21,980
+There are different places where the community comes together.
+
+186
+00:11:21,980 --> 00:11:26,160
+There are different places where the community comes together.
+Originally, there was discussions or interaction via Twitter.
+
+187
+00:11:26,160 --> 00:11:28,480
+Originally, there was discussions or interaction via Twitter.
+Then, GitHub introduced Discussions
+
+188
+00:11:28,480 --> 00:11:31,660
+Then, GitHub introduced Discussions
+and we use them next to plain old issues.
+
+189
+00:11:31,660 --> 00:11:34,620
+and we use them next to plain old issues.
+If you have more shortlived questions,
+
+190
+00:11:34,620 --> 00:11:38,220
+If you have more shortlived questions,
+hop onto the latest addition: a Discord server.
+
+191
+00:11:38,220 --> 00:11:40,220
+hop onto the latest addition: a Discord server.
+
+192
+00:11:40,220 --> 00:11:44,380
+Once you are looking into Eleventy issues, you will find something different.
+
+193
+00:11:44,380 --> 00:11:47,560
+Once you are looking into Eleventy issues, you will find something different.
+Most issues get closed quite quickly.
+
+194
+00:11:47,560 --> 00:11:50,460
+Most issues get closed quite quickly.
+And you will find a comment by Zach that says
+
+195
+00:11:50,460 --> 00:11:58,480
+And you will find a comment by Zach that says
+This issue is umm… This repository is managed via Lodash issue management
+
+196
+00:11:58,480 --> 00:12:02,980
+This issue is umm… This repository is managed via Lodash issue management
+So if you are an Open Source maintainer this might be interesting for you as well.
+
+197
+00:12:02,980 --> 00:12:05,800
+So if you are an Open Source maintainer this might be interesting for you as well.
+Basically you close most of the issues
+
+198
+00:12:05,800 --> 00:12:12,160
+Basically you close most of the issues
+except bugs and then you use a GitHub issue filter for the labeled issues you closed
+
+199
+00:12:12,160 --> 00:12:20,040
+except bugs and then you use a GitHub issue filter for the labeled issues you closed
+and let people upvote to determine in which order you should implement the enhancement.
+
+200
+00:12:20,040 --> 00:12:21,720
+and let people upvote to determine in which order you should implement the enhancement.
+
+201
+00:12:21,720 --> 00:12:23,360
+Of course people are blogging.
+
+202
+00:12:23,360 --> 00:12:27,100
+Of course people are blogging.
+With a quick search you will find plenty of getting started tutorials.
+
+203
+00:12:27,100 --> 00:12:30,400
+With a quick search you will find plenty of getting started tutorials.
+So I brought you some more advanced topics
+
+204
+00:12:30,400 --> 00:12:35,400
+So I brought you some more advanced topics
+which might help you learn some new tricks
+
+205
+00:12:35,400 --> 00:12:41,380
+which might help you learn some new tricks
+or blend into JAMstack.
+
+206
+00:12:41,380 --> 00:12:46,180
+or blend into JAMstack.
+You will find blog articles about data, content and template here.
+
+207
+00:12:46,180 --> 00:12:50,220
+You will find blog articles about data, content and template here.
+Again, this makes up a Static Site Generator.
+
+208
+00:12:50,220 --> 00:12:51,760
+Again, this makes up a Static Site Generator.
+Speaking of…
+
+209
+00:12:51,760 --> 00:12:56,160
+Speaking of…
+the community developed lots of plugins.
+
+210
+00:12:56,160 --> 00:12:59,880
+the community developed lots of plugins.
+I only brought you a small subset here.
+
+211
+00:12:59,880 --> 00:13:05,900
+I only brought you a small subset here.
+There is no hard rule, but by convention, most plugins start with eleventy-plugin.
+
+212
+00:13:05,900 --> 00:13:08,280
+There is no hard rule, but by convention, most plugins start with eleventy-plugin.
+There are plenty of more.
+
+213
+00:13:08,280 --> 00:13:12,840
+There are plenty of more.
+But if you feel you don't want to develop everything by hand,
+
+214
+00:13:12,840 --> 00:13:16,840
+But if you feel you don't want to develop everything by hand,
+the community also provided starter repositories.
+
+215
+00:13:16,840 --> 00:13:24,280
+the community also provided starter repositories.
+As you can see the most repositories have a really good Lighthouse score.
+
+216
+00:13:24,280 --> 00:13:28,120
+As you can see the most repositories have a really good Lighthouse score.
+So you have a great start and take it from there.
+
+217
+00:13:28,120 --> 00:13:31,640
+So you have a great start and take it from there.
+Again, this is only a small subset of what's available.
+
+218
+00:13:31,640 --> 00:13:33,940
+Again, this is only a small subset of what's available.
+
+219
+00:13:33,940 --> 00:13:37,480
+Say, I convinced you to get started with Eleventy.
+
+220
+00:13:37,480 --> 00:13:40,460
+Say, I convinced you to get started with Eleventy.
+If you want to use a guideline to follow along,
+
+221
+00:13:40,460 --> 00:13:42,460
+If you want to use a guideline to follow along,
+use 11ty Rocks!
+
+222
+00:13:42,460 --> 00:13:46,320
+use 11ty Rocks!
+Another project in that spirit can be found at 11ty Recipes.
+
+223
+00:13:46,320 --> 00:13:47,520
+Another project in that spirit can be found at 11ty Recipes.
+
+224
+00:13:47,520 --> 00:13:49,180
+If you need inspiration,
+
+225
+00:13:49,180 --> 00:13:51,680
+If you need inspiration,
+take a look at Eleventy Themes.
+
+226
+00:13:51,680 --> 00:13:55,820
+take a look at Eleventy Themes.
+Be aware, that Eleventy does not have a theming system itself.
+
+227
+00:13:55,820 --> 00:13:57,220
+Be aware, that Eleventy does not have a theming system itself.
+Last but not least,
+
+228
+00:13:57,220 --> 00:14:02,320
+Last but not least,
+the hashtag BuiltWithEleventy can be used to collect pages built with it.
+
+229
+00:14:02,320 --> 00:14:06,280
+the hashtag BuiltWithEleventy can be used to collect pages built with it.
+And this site here associates the group behind it.
+
+230
+00:14:06,280 --> 00:14:10,280
+And this site here associates the group behind it.
+If you take a look you will even large enterprises betting on Eleventy!
+
+231
+00:14:10,280 --> 00:14:12,880
+If you take a look you will even large enterprises betting on Eleventy!
+
+232
+00:14:12,880 --> 00:14:18,440
+I'm not the first one who tries to introduce a wider audience to Eleventy.
+
+233
+00:14:18,440 --> 00:14:21,220
+I'm not the first one who tries to introduce a wider audience to Eleventy.
+In fact, I can recommend these two links.
+
+234
+00:14:21,220 --> 00:14:25,540
+In fact, I can recommend these two links.
+The first one is a podcast and the second a YouTube list.
+
+235
+00:14:25,540 --> 00:14:28,920
+The first one is a podcast and the second a YouTube list.
+David will give you a nice overview like I did here.
+
+236
+00:14:28,920 --> 00:14:35,480
+David will give you a nice overview like I did here.
+The playlist shows some real-world examples or can teach you even more tricks.
+
+237
+00:14:35,480 --> 00:14:40,200
+The playlist shows some real-world examples or can teach you even more tricks.
+Okay, Eleventy got some traction.
+
+238
+00:14:40,200 --> 00:14:43,480
+Okay, Eleventy got some traction.
+That led to first training courses coming up.
+
+239
+00:14:43,480 --> 00:14:46,160
+That led to first training courses coming up.
+Perhaps, you feel better with spending some money
+
+240
+00:14:46,160 --> 00:14:48,740
+Perhaps, you feel better with spending some money
+to get high-quality stuff in return.
+
+241
+00:14:48,740 --> 00:14:52,080
+to get high-quality stuff in return.
+Fear not, Andy Bell has you covered.
+
+242
+00:14:52,080 --> 00:14:57,000
+Fear not, Andy Bell has you covered.
+I haven't taken his course personally, but I only hear positive feedback so far.
+
+243
+00:14:57,000 --> 00:15:00,000
+I haven't taken his course personally, but I only hear positive feedback so far.
+If you want to have something sweat and short,
+
+244
+00:15:00,000 --> 00:15:03,300
+If you want to have something sweat and short,
+Stephanie Eckles have you covered.
+
+245
+00:15:03,300 --> 00:15:04,400
+Stephanie Eckles have you covered.
+Not convinced?
+
+246
+00:15:04,400 --> 00:15:07,360
+Not convinced?
+What about learning with Jason then?
+
+247
+00:15:07,360 --> 00:15:11,100
+What about learning with Jason then?
+He recorded a video where Zach himself shows you the ropes.
+
+248
+00:15:11,100 --> 00:15:14,100
+He recorded a video where Zach himself shows you the ropes.
+
+249
+00:15:15,220 --> 00:15:19,740
+I urge you: if this presentation convinced you, please donate.
+
+250
+00:15:19,740 --> 00:15:22,640
+I urge you: if this presentation convinced you, please donate.
+This will help sustain the development.
+
+251
+00:15:22,640 --> 00:15:25,660
+This will help sustain the development.
+There are even some perks you can gain for it.
+
+252
+00:15:25,660 --> 00:15:31,620
+There are even some perks you can gain for it.
+For example, if you logged in into Eleventy website, you will get a more powerful search.
+
+253
+00:15:31,620 --> 00:15:37,020
+For example, if you logged in into Eleventy website, you will get a more powerful search.
+Or your avatar will displayed on almost all pages you can find in the Eleventy documentation.
+
+254
+00:15:37,020 --> 00:15:39,460
+Or your avatar will displayed on almost all pages you can find in the Eleventy documentation.
+So this is your chance! Use it!
+
+255
+00:15:39,460 --> 00:15:41,820
+So this is your chance! Use it!
+If you don't have the money, no problem.
+
+256
+00:15:41,820 --> 00:15:46,060
+If you don't have the money, no problem.
+Please star the repo or/and tell a friend about how awesome it is!
+
+257
+00:15:46,060 --> 00:15:48,500
+Please star the repo or/and tell a friend about how awesome it is!
+
+258
+00:15:48,500 --> 00:15:53,740
+As you can see I used plenty of pictures and here are the sources I used
+
+259
+00:15:53,740 --> 00:15:56,300
+As you can see I used plenty of pictures and here are the sources I used
+and the licenses as far as I know them.
+
+260
+00:15:56,300 --> 00:15:58,460
+and the licenses as far as I know them.
+
+261
+00:15:58,460 --> 00:16:01,540
+And with this I want to thank you for listening and
+
+262
+00:16:01,540 --> 00:16:03,840
+And with this I want to thank you for listening and
+now we have time for questions.
+
+263
+00:16:03,840 --> 00:16:05,840
+now we have time for questions.
+
